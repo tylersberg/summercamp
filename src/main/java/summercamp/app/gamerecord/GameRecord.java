@@ -2,13 +2,18 @@ package summercamp.app.gamerecord;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 
 import java.time.LocalDateTime;
-
 import java.math.BigDecimal;
+import java.io.Serializable;
+import java.util.Set;
+
+import summercamp.app.playerrecord.PlayerRecord;
 
 @Entity
-public class GameRecord {
+public class GameRecord implements Serializable {
 
   @Id
   private Long gameCode;
@@ -17,6 +22,8 @@ public class GameRecord {
   private LocalDateTime start;
   private LocalDateTime end;
   private BigDecimal totalTips;
+  @OneToMany(mappedBy="gameRecord", cascade=CascadeType.ALL)
+  private Set<PlayerRecord> playerRecords;
 
   protected GameRecord() {}
 
@@ -34,7 +41,7 @@ public class GameRecord {
   @Override
   public String toString() {
     return String.format(
-        "GameId=%d, GameName='%s', GameType='%s', StartTime=%t, TotalTips=%d",
+        "GameId=%d, GameName=%s, GameType=%s, StartTime=%t, TotalTips=%d",
         gameCode, gameName, gameType, start, totalTips);
   }
 
