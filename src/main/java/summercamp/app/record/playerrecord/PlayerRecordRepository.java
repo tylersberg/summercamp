@@ -1,4 +1,4 @@
-package summercamp.app.playerrecord;
+package summercamp.app.record.playerrecord;
 
 import org.springframework.data.repository.CrudRepository;
 

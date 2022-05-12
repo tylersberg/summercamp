@@ -1,4 +1,4 @@
-package summercamp.app.gamerecord;
+package summercamp.app.record.gamerecord;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
-import summercamp.app.playerrecord.PlayerRecord;
+import summercamp.app.record.playerrecord.PlayerRecord;
 
 @Entity
 public class GameRecord implements Serializable {
