@@ -1,4 +1,11 @@
-/src/main/resources/application.properties
+src/main/resources/application.properties
+
+# Compiled Files
+*.class
+bin/
+build/
+/bin1/
+java/build/**
 
 HELP.md
 target/
