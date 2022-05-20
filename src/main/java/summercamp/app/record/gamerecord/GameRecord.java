@@ -98,7 +98,6 @@ public class GameRecord implements Serializable {
 		return Objects.equals(this.gameCode, gr.gameCode)
 			&& Objects.equals(this.gameName, gr.gameName)
 			&& Objects.equals(this.gameType, gr.gameType)
-			&& Objects.equals(this.startTime, gr.startTime)
-			&& Objects.equals(this.startTime, gr.endTime);
+			&& Objects.equals(this.startTime, gr.startTime);
 	}
 }
