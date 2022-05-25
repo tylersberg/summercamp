@@ -7,14 +7,13 @@ import javax.persistence.CascadeType;
 
 import java.time.LocalDateTime;
 import java.math.BigDecimal;
-import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
 import summercamp.app.record.playerrecord.PlayerRecord;
 
 @Entity
-public class GameRecord implements Serializable {
+public class GameRecord {
 
 	@Id 
 	private String gameCode;

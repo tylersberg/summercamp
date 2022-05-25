@@ -1,8 +1,8 @@
 package summercamp.app.record.playerrecord;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PlayerRecordRepository extends CrudRepository<PlayerRecord, Long> {
+public interface PlayerRecordRepository extends JpaRepository<PlayerRecord, Long> {
 
 	public PlayerRecord findByPlayerName(String name);
 
