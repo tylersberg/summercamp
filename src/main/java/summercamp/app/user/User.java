@@ -12,7 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-class User implements UserDetails {
+public class User implements UserDetails {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
