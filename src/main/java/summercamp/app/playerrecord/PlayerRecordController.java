@@ -1,5 +1,4 @@
-
-package summercamp.app.record.playerrecord;
+package summercamp.app.playerrecord;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package summercamp.app.record.playerrecord;
+package summercamp.app.playerrecord;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

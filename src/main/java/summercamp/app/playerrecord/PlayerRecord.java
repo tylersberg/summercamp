@@ -1,4 +1,4 @@
-package summercamp.app.record.playerrecord;
+package summercamp.app.playerrecord;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-import summercamp.app.record.gamerecord.GameRecord;
+import summercamp.app.gamerecord.GameRecord;
 
 @Entity
 public class PlayerRecord {

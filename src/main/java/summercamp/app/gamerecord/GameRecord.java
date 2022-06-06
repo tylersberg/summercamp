@@ -1,16 +1,19 @@
-package summercamp.app.record.gamerecord;
+package summercamp.app.gamerecord;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.CascadeType;
 
-import java.time.LocalDateTime;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.Set;
 
-import summercamp.app.record.playerrecord.PlayerRecord;
+import summercamp.app.hostrecord.TipSplit;
+import summercamp.app.playerrecord.PlayerRecord;
+import summercamp.app.tipout.TipOut;
 
 @Entity
 public class GameRecord {
@@ -19,10 +22,16 @@ public class GameRecord {
 	private String gameCode;
 	private String gameName;
 	private String gameType;
-	private LocalDateTime startTime;
+	private Timestamp startTime;
+	private Timestamp endTime;
 	private BigDecimal totalTips;
 	@OneToMany(mappedBy="gameRecord", cascade=CascadeType.ALL)
 	private Set<PlayerRecord> playerRecords;
+	@OneToMany(mappedBy="gameRecord", cascade=CascadeType.ALL)
+	private Set<TipSplit> splits;
+	@OneToOne(mappedBy="gameRecord", cascade=CascadeType.ALL)
+	private TipOut tipout;
+	
 
 	protected GameRecord() {}
 
@@ -30,7 +39,7 @@ public class GameRecord {
 			String gameCode,
 			String gameName,
 			String gameType,
-			LocalDateTime startDateTime,
+			Timestamp startDateTime,
 			BigDecimal totalTips
 			) {
 		this.gameCode = gameCode;
@@ -52,12 +61,24 @@ public class GameRecord {
 		return gameType;
 	}
 
-	public LocalDateTime getStart() {
+	public Timestamp getStart() {
 		return startTime;
 	}
 
+	public Timestamp getEnd() {
+		return endTime;
+	}
+	
 	public BigDecimal getTips() {
 		return totalTips;
+	}
+
+	public Set<TipSplit> getSplits() {
+		return splits;
+	}
+
+	public TipOut getTipOut() {
+		return tipout;
 	}
 /*
 	public void setGameCode(String gameCode) {
